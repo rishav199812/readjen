@@ -9,7 +9,7 @@ pipeline {
                   def lineRemovedString = data.split('\n')
                   def evnVariables = lineRemovedString.join(',')
                    print(evnVariables)
-                   print(data)
+         
                }
            }
        }
