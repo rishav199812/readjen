@@ -18,7 +18,7 @@ pipeline {
             script {
                //echo "${evnVariables}"
                //echo String.format('aws lambda update-function-configuration --environment "Variables={${evnVariables}}" ')
-               echo 'aws lambda update-function-configuration --environment "Variables={%s}"', "${evnVariables}")
+               echo 'aws lambda update-function-configuration --environment "Variables={%s}"', "${evnVariables}"
             }
          }
       }
