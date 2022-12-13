@@ -17,7 +17,10 @@ pipeline {
            steps {
                script {
                    def data = readFile(file: 'dev/prod.env')
-                   println(data)
+                  def lineRemovedString = evnFileContent.split('\n')
+                  def evnVariables = lineRemovedString.join(',')
+                   print(evnVariables)
+                   print(data)
                }
            }
        }
