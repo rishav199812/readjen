@@ -16,7 +16,7 @@ pipeline {
       stage('write'){
          steps {
             script {
-               echo String.format('aws lambda update-function-configuration --environment "Variables={%s}"', evnVariables)
+               echo String.format('aws lambda update-function-configuration --environment "Variables={%s}"', '${evnVariables}')
             }
          }
       }
