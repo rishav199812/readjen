@@ -17,7 +17,7 @@ pipeline {
          steps {
             script {
                echo "${evnVariables}"
-               echo 'aws lambda update-function-configuration --environment Variables="${evnVariables}" '
+               echo 'aws lambda update-function-configuration --environment "Variables={${evnVariables}}" '
             }
          }
       }
