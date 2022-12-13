@@ -1,11 +1,6 @@
 pipeline {
    agent any
-   environment {
-      LAMBDA_NAME='ABCD'
-      ENV='dev'
-   }
    stages {
-  
        stage('read') {
            steps {
                script {
@@ -13,10 +8,17 @@ pipeline {
                   def lineRemovedString = data.split('\n')
                   def evnVariables = lineRemovedString.join(',')
                    print(evnVariables)
-                  echo String.format('aws lambda update-function-configuration --environment "Variables={%s}"', evnVariables)
+                  //echo String.format('aws lambda update-function-configuration --environment "Variables={%s}"', evnVariables)
          
                }
            }
        }
+      stage('write'){
+         steps {
+            script {
+               echo String.format('aws lambda update-function-configuration --environment "Variables={%s}"', evnVariables)
+            }
+         }
+      }
    }
 }
