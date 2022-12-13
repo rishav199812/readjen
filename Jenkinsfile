@@ -6,7 +6,7 @@ pipeline {
                script {
                    def data = readFile(file: 'dev/prod.env')
                   def lineRemovedString = data.split('\n')
-                  def evnVariables = lineRemovedString.join(',')
+                   evnVariables = lineRemovedString.join(',')
                    print(evnVariables)
                   //echo String.format('aws lambda update-function-configuration --environment "Variables={%s}"', evnVariables)
          
