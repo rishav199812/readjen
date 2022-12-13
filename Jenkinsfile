@@ -1,8 +1,8 @@
 pipeline {
    agent any
    environment {
-      LAMBDA_NAME=ABCD
-      ENV=dev
+      LAMBDA_NAME='ABCD'
+      ENV='dev'
    }
    stages {
   
