@@ -13,7 +13,7 @@ pipeline {
                   def lineRemovedString = data.split('\n')
                   def evnVariables = lineRemovedString.join(',')
                    print(evnVariables)
-                  echo "aws lambda update-function-configuration --environment "Variables={%s}", '${evnVariables}' "
+                  echo String.format('aws lambda update-function-configuration --environment "Variables={%s}"', '${evnVariables}')
          
                }
            }
