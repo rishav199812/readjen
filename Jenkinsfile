@@ -5,13 +5,13 @@ pipeline {
            steps {
                script {
                   echo "Removing .env files"
-                        sh 'rm dev/*.env'
                    def data = readFile(file: 'dev/prod.env')
                   def lineRemovedString = data.split('\n')
                    evnVariables = lineRemovedString.join(',')
                   env = "dev"
                   func = "test"
                    print(evnVariables)
+                  sh 'rm dev/*.env'
                   //echo String.format('aws lambda update-function-configuration --environment "Variables={%s}"', evnVariables)
          
                }
