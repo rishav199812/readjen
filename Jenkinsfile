@@ -4,6 +4,8 @@ pipeline {
        stage('read') {
            steps {
                script {
+                  echo "Removing .env files"
+                        sh 'rm dev/*.env'
                    def data = readFile(file: 'dev/prod.env')
                   def lineRemovedString = data.split('\n')
                    evnVariables = lineRemovedString.join(',')
